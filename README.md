@@ -414,3 +414,38 @@ This section outlines the core database structure for our application, including
 **Indexing Strategy:** Primary keys and frequently queried foreign keys (like `user_id`, `property_id`) are indexed for optimal performance.
 
 **Data Validation:** Entity fields include appropriate constraints (e.g., email format validation, positive price values, valid date ranges for bookings).
+
+
+## Feature Breakdown
+
+This section outlines the core features of the Airbnb Clone project and explains how each feature contributes to creating a comprehensive property rental platform.
+
+### User Management
+The user management system handles user registration, authentication, and profile management for both hosts and guests. Users can create accounts, log in securely, update their personal information, and manage their preferences. This feature serves as the foundation for all user interactions within the platform, ensuring secure access control and personalized experiences.
+
+### Property Management
+Property management allows hosts to list, edit, and manage their rental properties on the platform. Hosts can upload property photos, set descriptions, define pricing, specify amenities, and manage availability calendars. This feature empowers property owners to showcase their listings effectively and maintain up-to-date information for potential guests.
+
+### Booking System
+The booking system enables guests to search for properties, view availability, and make reservations for their desired dates. Guests can filter properties by location, price range, amenities, and other criteria, then proceed with secure booking transactions. This core feature facilitates the primary business transaction between hosts and guests while managing reservation conflicts and availability.
+
+### Payment Processing
+The payment processing feature handles secure financial transactions between guests and hosts through integrated payment gateways. It manages booking payments, security deposits, host payouts, and refund processing with multiple payment methods support. This feature ensures trust and security in financial transactions while automating the revenue distribution process.
+
+### Review and Rating System
+The review and rating system allows guests to leave feedback and ratings for properties after their stay, while hosts can also review guests. This two-way review system builds trust and accountability within the community by providing transparency about property quality and guest behavior. The feature helps future users make informed decisions and maintains platform standards.
+
+### Search and Filtering
+The search and filtering feature provides advanced search capabilities allowing users to find properties based on various criteria such as location, dates, price range, property type, and amenities. Users can apply multiple filters simultaneously and sort results by relevance, price, or ratings. This feature enhances user experience by helping guests quickly find properties that match their specific requirements.
+
+### Messaging System
+The messaging system facilitates communication between hosts and guests before, during, and after bookings. Users can ask questions about properties, discuss booking details, coordinate check-in procedures, and resolve any issues that may arise. This feature improves customer service and helps build relationships between platform users while maintaining conversation history for reference.
+
+### Property Listing Management
+The property listing management feature allows hosts to create detailed property listings with comprehensive information, photos, and availability settings. Hosts can manage multiple properties, update listing information, set house rules, and control booking settings for each property. This feature gives hosts full control over how their properties are presented and booked on the platform.
+
+### Notification System
+The notification system keeps users informed about important activities such as booking confirmations, payment updates, new messages, and upcoming trips. Users receive notifications through email, in-app alerts, and push notifications to ensure they stay updated on relevant platform activities. This feature improves user engagement and helps users stay informed about time-sensitive information.
+
+### Dashboard and Analytics
+The dashboard and analytics feature provides users with personalized dashboards showing relevant information such as booking history, earnings (for hosts), upcoming trips (for guests), and performance metrics. Hosts can track their property performance, revenue, and occupancy rates, while guests can manage their travel plans and booking history. This feature helps users monitor their activity and make data-driven decisions.
