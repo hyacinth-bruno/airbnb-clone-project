@@ -314,3 +314,103 @@ This section outlines the key technologies used in our project and their specifi
 **Webpack**
 - **Purpose:** A module bundler for modern JavaScript applications
 - **Role in Project:** Bundles and optimizes frontend assets for production deployment
+
+
+
+## Database Design
+
+This section outlines the core database structure for our application, including key entities, their important fields, and the relationships between them.
+
+### Core Entities
+
+#### Users
+**Key Fields:**
+- `user_id` (Primary Key) - Unique identifier for each user
+- `email` - User's email address for authentication and communication
+- `username` - Unique username for the user
+- `password_hash` - Encrypted password for secure authentication
+- `created_at` - Timestamp of user registration
+
+**Description:** Represents all users in the system, including property owners and guests.
+
+#### Properties
+**Key Fields:**
+- `property_id` (Primary Key) - Unique identifier for each property
+- `owner_id` (Foreign Key) - References the user who owns the property
+- `title` - Property name or title
+- `address` - Complete property address
+- `price_per_night` - Rental price per night
+- `description` - Detailed property description
+- `max_guests` - Maximum number of guests allowed
+
+**Description:** Contains all rental properties available on the platform.
+
+#### Bookings
+**Key Fields:**
+- `booking_id` (Primary Key) - Unique identifier for each booking
+- `property_id` (Foreign Key) - References the booked property
+- `guest_id` (Foreign Key) - References the user making the booking
+- `check_in_date` - Start date of the stay
+- `check_out_date` - End date of the stay
+- `total_amount` - Total cost of the booking
+- `status` - Current booking status (pending, confirmed, cancelled, completed)
+
+**Description:** Tracks all booking transactions between guests and property owners.
+
+#### Reviews
+**Key Fields:**
+- `review_id` (Primary Key) - Unique identifier for each review
+- `booking_id` (Foreign Key) - References the associated booking
+- `reviewer_id` (Foreign Key) - References the user writing the review
+- `rating` - Numerical rating (e.g., 1-5 stars)
+- `comment` - Written review content
+- `created_at` - Timestamp when the review was submitted
+
+**Description:** Stores guest reviews and ratings for properties after completed stays.
+
+#### Payments
+**Key Fields:**
+- `payment_id` (Primary Key) - Unique identifier for each payment
+- `booking_id` (Foreign Key) - References the associated booking
+- `amount` - Payment amount
+- `payment_method` - Method of payment (credit card, PayPal, etc.)
+- `transaction_id` - External payment processor transaction ID
+- `status` - Payment status (pending, completed, failed, refunded)
+- `processed_at` - Timestamp when payment was processed
+
+**Description:** Manages all financial transactions related to bookings.
+
+### Entity Relationships
+
+#### User Relationships
+- **One-to-Many with Properties:** A user can own multiple properties
+- **One-to-Many with Bookings:** A user can make multiple bookings as a guest
+- **One-to-Many with Reviews:** A user can write multiple reviews for different stays
+
+#### Property Relationships
+- **Many-to-One with Users:** Each property belongs to one owner (user)
+- **One-to-Many with Bookings:** A property can have multiple bookings over time
+- **One-to-Many with Reviews:** A property can receive multiple reviews from different guests
+
+#### Booking Relationships
+- **Many-to-One with Users:** Each booking is made by one guest (user)
+- **Many-to-One with Properties:** Each booking is for one specific property
+- **One-to-One with Reviews:** Each completed booking can have one review
+- **One-to-One with Payments:** Each booking has one associated payment
+
+#### Review Relationships
+- **Many-to-One with Users:** Each review is written by one user
+- **One-to-One with Bookings:** Each review is associated with one specific booking
+- **Many-to-One with Properties:** Multiple reviews can be associated with one property (through bookings)
+
+#### Payment Relationships
+- **One-to-One with Bookings:** Each payment is associated with one booking
+- **Many-to-One with Users:** Multiple payments can be made by one user (through different bookings)
+
+### Database Schema Notes
+
+**Referential Integrity:** All foreign key relationships maintain referential integrity to ensure data consistency across the database.
+
+**Indexing Strategy:** Primary keys and frequently queried foreign keys (like `user_id`, `property_id`) are indexed for optimal performance.
+
+**Data Validation:** Entity fields include appropriate constraints (e.g., email format validation, positive price values, valid date ranges for bookings).
