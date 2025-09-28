@@ -240,3 +240,77 @@ This section outlines the various roles within our project team and their respec
 - Update documentation with new releases and changes
 
 
+
+## Technology Stack
+
+This section outlines the key technologies used in our project and their specific purposes within the application architecture.
+
+### Backend Technologies
+
+**Django**
+- **Purpose:** A high-level Python web framework for building robust and scalable web applications
+- **Role in Project:** Serves as the main backend framework for creating RESTful APIs, handling business logic, and managing application routing
+
+**PostgreSQL**
+- **Purpose:** A powerful, open-source relational database management system
+- **Role in Project:** Primary database for storing and managing application data with support for complex queries and data integrity
+
+**GraphQL**
+- **Purpose:** A query language and runtime for APIs that provides a flexible approach to data fetching
+- **Role in Project:** Enables efficient data querying by allowing clients to request exactly the data they need, reducing over-fetching
+
+### Frontend Technologies
+
+**React**
+- **Purpose:** A JavaScript library for building interactive user interfaces
+- **Role in Project:** Creates dynamic and responsive frontend components for enhanced user experience
+
+**TypeScript**
+- **Purpose:** A typed superset of JavaScript that compiles to plain JavaScript
+- **Role in Project:** Provides type safety and improved developer experience for frontend development
+
+**Redux**
+- **Purpose:** A predictable state container for JavaScript applications
+- **Role in Project:** Manages application state across components for consistent data flow
+
+### DevOps & Infrastructure
+
+**Docker**
+- **Purpose:** A containerization platform for packaging applications and their dependencies
+- **Role in Project:** Ensures consistent development and deployment environments across different systems
+
+**Nginx**
+- **Purpose:** A high-performance web server and reverse proxy server
+- **Role in Project:** Handles static file serving, load balancing, and acts as a reverse proxy for the Django application
+
+**Redis**
+- **Purpose:** An in-memory data structure store used as a database, cache, and message broker
+- **Role in Project:** Provides caching functionality to improve application performance and handles session management
+
+### Development Tools
+
+**Git**
+- **Purpose:** A distributed version control system for tracking changes in source code
+- **Role in Project:** Manages code versioning, collaboration, and maintains project history
+
+**Pytest**
+- **Purpose:** A testing framework for Python applications
+- **Role in Project:** Handles unit testing, integration testing, and ensures code quality through automated testing
+
+**ESLint**
+- **Purpose:** A static analysis tool for identifying problematic patterns in JavaScript/TypeScript code
+- **Role in Project:** Maintains code quality and consistency across the frontend codebase
+
+### Additional Tools
+
+**Celery**
+- **Purpose:** A distributed task queue for Python applications
+- **Role in Project:** Handles background tasks and asynchronous processing to improve application responsiveness
+
+**JWT (JSON Web Tokens)**
+- **Purpose:** A compact and secure way of transmitting information between parties
+- **Role in Project:** Manages user authentication and authorization across the application
+
+**Webpack**
+- **Purpose:** A module bundler for modern JavaScript applications
+- **Role in Project:** Bundles and optimizes frontend assets for production deployment
