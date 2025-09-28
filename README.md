@@ -504,3 +504,89 @@ This section outlines the critical security measures implemented to protect our 
 **Implementation:** Payment Card Industry Data Security Standard (PCI DSS) compliant payment processing with tokenization of sensitive payment data and secure integration with payment gateways. No sensitive payment information is stored directly in our systems.
 
 **Why It's Crucial:** Payment security compliance protects users' financial information and maintains the platform's ability to process payments legally and safely. Given that the platform processes booking payments and host payouts, PCI DSS compliance is mandatory and essential for preventing financial fraud and maintaining payment processor partnerships.
+
+
+## CI/CD Pipeline
+
+This section explains our Continuous Integration and Continuous Deployment (CI/CD) pipeline implementation and its critical role in maintaining code quality and streamlining the development process for our Airbnb Clone project.
+
+### What is CI/CD?
+
+**Continuous Integration (CI)** is a development practice where developers frequently integrate code changes into a shared repository, typically multiple times per day. Each integration is automatically verified by running automated builds and tests to detect integration errors as quickly as possible.
+
+**Continuous Deployment (CD)** extends CI by automatically deploying all code changes that pass the automated testing phase to production environments. This ensures that the software can be released reliably at any time with minimal manual intervention.
+
+### Why CI/CD is Important for Our Project
+
+**Code Quality Assurance:** CI/CD pipelines automatically run comprehensive test suites, code quality checks, and security scans on every code change, ensuring that bugs and vulnerabilities are caught early in the development process. For a rental platform handling sensitive user data and financial transactions, maintaining high code quality is essential for security and reliability.
+
+**Faster Development Cycles:** Automated testing and deployment processes significantly reduce the time between writing code and seeing it live in production. This enables our development team to deliver new features, bug fixes, and security updates to users more quickly, improving the platform's competitiveness and user satisfaction.
+
+**Reduced Manual Errors:** By automating repetitive tasks like testing, building, and deployment, CI/CD eliminates human errors that can occur during manual processes. This is particularly crucial for a booking platform where deployment errors could result in booking failures, payment issues, or data inconsistencies.
+
+**Consistent Environments:** CI/CD ensures that code is tested and deployed in consistent environments, reducing the "it works on my machine" problem and ensuring that the application behaves predictably across development, staging, and production environments.
+
+### Tools and Technologies
+
+#### GitHub Actions
+**Purpose:** Primary CI/CD platform integrated directly with our GitHub repository for seamless workflow automation.
+**Implementation:** Automated workflows triggered by code commits, pull requests, and scheduled events to run tests, build applications, and deploy to various environments.
+
+#### Docker
+**Purpose:** Containerization platform for creating consistent, portable application environments.
+**Implementation:** Docker containers ensure that the application runs identically across development, testing, and production environments, eliminating environment-specific issues.
+
+#### Docker Compose
+**Purpose:** Tool for defining and running multi-container Docker applications.
+**Implementation:** Orchestrates the entire application stack including web servers, databases, and cache systems for local development and testing environments.
+
+#### Jest/Pytest
+**Purpose:** Testing frameworks for frontend (Jest) and backend (Pytest) automated testing.
+**Implementation:** Comprehensive test suites including unit tests, integration tests, and end-to-end tests that run automatically on every code change.
+
+#### ESLint/Flake8
+**Purpose:** Code quality and linting tools for maintaining consistent code style and identifying potential issues.
+**Implementation:** Automated code quality checks that enforce coding standards and identify syntax errors, unused variables, and potential bugs.
+
+#### SonarQube
+**Purpose:** Code quality and security analysis platform.
+**Implementation:** Continuous inspection of code quality, security vulnerabilities, and technical debt assessment integrated into the CI pipeline.
+
+#### AWS/Heroku
+**Purpose:** Cloud deployment platforms for hosting the production application.
+**Implementation:** Automated deployment to cloud infrastructure with environment-specific configurations and rollback capabilities.
+
+### Pipeline Stages
+
+**1. Code Commit/Pull Request**
+- Triggered when developers push code or create pull requests
+- Initiates the automated CI/CD pipeline process
+
+**2. Build Phase**
+- Compiles the application code
+- Installs dependencies and prepares the application for testing
+
+**3. Testing Phase**
+- Runs unit tests, integration tests, and end-to-end tests
+- Performs code quality analysis and security scanning
+- Generates test coverage reports
+
+**4. Code Quality Checks**
+- Linting and code style validation
+- Security vulnerability scanning
+- Performance and compatibility testing
+
+**5. Staging Deployment**
+- Deploys the application to a staging environment
+- Runs additional integration and user acceptance tests
+
+**6. Production Deployment**
+- Automatically deploys to production if all previous stages pass
+- Implements blue-green deployment or rolling updates for zero-downtime deployment
+- Monitors application health and performance post-deployment
+
+### Benefits for Our Airbnb Clone Project
+
+**Reliability:** Automated testing ensures that new features don't break existing functionality, maintaining platform stability for users booking accommodations and managing properties.
+
+**Security:** Continuous security scanning helps identify and address vulnerabilities before they reach production, protecting user data and payment i
